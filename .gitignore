@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+.DS_Store
+
+# Local acceptance screenshots (downloadable copies are provided outside the repository)
+/screenshots/home-desktop.png
+/screenshots/node-detail.png
+/screenshots/mobile-filter.png
