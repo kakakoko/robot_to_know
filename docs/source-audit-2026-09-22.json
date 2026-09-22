@@ -1,0 +1,535 @@
+{
+  "checkedAt": "2026-09-22",
+  "components": {
+    "auditedAt": "2026-09-22",
+    "method": "逐条通过 web.open 打开原始 URL；检索只用于寻找官网替代页，最终核验以实际打开的官网正文为准。已核实仅指 evidence 中列明的有限陈述，不代表节点全部基础科普或全部参数已独立审查。",
+    "originalCount": 8,
+    "resolvedOriginalCount": 8,
+    "originalUrlSummary": {
+      "accessible": 3,
+      "redirected": 1,
+      "unavailableViaWebTool": 4
+    },
+    "findings": [
+      "原数据把 RealSense 仍记为 Intel；官网 2025-07-11 公告证实已独立，企业名称与发布方应改 RealSense。",
+      "视觉与力传感器节点原来只有视觉资料，没有任何力/力矩传感器案例或直接证据；补 ATI Mini45。",
+      "汇川原来共用产品总入口支撑电机、驱动与机器人控制器。需拆为 MS1-V6 电机和 SV660 驱动两个直接产品来源；本次未核实机器人控制器，不应继续泛称机器人控制器产品。",
+      "绿的谐波、汇川、maxon、Intel RealSense 原 URL 在本次 web 工具中无法访问；不能记录这些原链接已核实，应用已实际打开的替代页。",
+      "Robotiq 原 URL 会重定向到新版自适应夹爪页；该页抽取中有占位模板，产品存在可确认，但参数最好使用官方说明书交叉核验，避免复制页面占位参数。",
+      "公司产品案例均不构成对某整机厂商供货的证明。"
+    ],
+    "originals": [
+      {
+        "id": "harmonic",
+        "original": {
+          "url": "https://www.leaderdrive.com/product.html",
+          "status": "无法通过本次 web 工具访问",
+          "verification": "pending",
+          "reason": "web.open 返回 Internal Error / URL not accessible；不可推断永久失效。"
+        },
+        "action": "replace",
+        "recommendedSource": {
+          "publisher": "绿的谐波（Leaderdrive）",
+          "title": "LCS-Mini 杯形谐波减速器",
+          "url": "https://www.leaderdrive.com/product/17.html",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "evidence": "官网将 LCS-Mini 描述为紧凑轻量的谐波减速器，列出紧凑机器人关节应用，以及减速比、额定力矩、回差、刚度与传动精度表。"
+        },
+        "recommendedCompanyProduct": "LCS-Mini 精密谐波减速器",
+        "limitations": "不引入该官网宣传的市场份额、领先程度或客户名单；页面宣传零回差而表格列有具体回差，不应写绝对无回差。"
+      },
+      {
+        "id": "nabtesco",
+        "original": {
+          "url": "https://precision.nabtesco.com/en/products/",
+          "status": "可访问",
+          "verification": "verified"
+        },
+        "action": "keep",
+        "recommendedSource": {
+          "publisher": "Nabtesco",
+          "title": "Product Lineup — RV 精密减速器",
+          "url": "https://precision.nabtesco.com/en/products/",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "evidence": "官网列出 RV-N、RV-C、RV-E 精密减速器，以及带伺服电机执行器和 AGV 驱动单元。"
+        },
+        "recommendedCompanyProduct": "RV-N / RV-C / RV-E 精密减速器",
+        "limitations": "目录可证实产品与公司归属，不独立证明市场份额或向任何特定机械臂企业供货。"
+      },
+      {
+        "id": "inovance",
+        "original": {
+          "url": "https://www.inovance.com/portal/product/index.html",
+          "status": "无法通过本次 web 工具访问",
+          "verification": "pending",
+          "reason": "web.open 返回 Internal Error / URL not accessible。"
+        },
+        "action": "split",
+        "recommendedSource": {
+          "publisher": "汇川技术（Inovance）",
+          "title": "SV660 Series — 通用伺服驱动器",
+          "url": "https://www.inovance.com/global/content/details_815_403229.html",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "evidence": "官网标题为 General-purpose Servo Drive，列有通信协议及多台驱动器与上位控制器连接方式。"
+        },
+        "recommendedCompanyProduct": "SV660 系列伺服驱动器",
+        "additionalSourceId": "inovanceMotor",
+        "implementationNotes": "controller 节点企业产品改为 SV660 系列伺服驱动器；motor 节点单独用 inovanceMotor 及 MS1-V6 系列伺服电机。不继续用该源证明机器人控制器。",
+        "limitations": "SV660 来源验证伺服驱动产品，不能单独证明机器人控制器整机产品。"
+      },
+      {
+        "id": "maxon",
+        "original": {
+          "url": "https://www.maxongroup.com/maxon/view/application/robotics",
+          "status": "无法通过本次 web 工具访问",
+          "verification": "pending",
+          "reason": "web.open 返回 Internal Error / URL not accessible。"
+        },
+        "action": "replace",
+        "recommendedSource": {
+          "publisher": "maxon",
+          "title": "IDX 70 无刷电机、EPOS4 控制器与 GB65 减速箱驱动系统",
+          "url": "https://www.maxongroup.com/en-gb/news-and-events/news/maxon-launches-high-torque-density-drive-system-for-tough-environments-261574",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "published": "页面标为 Media Release 03/04/2025（保留原格式，未擅自解释月日顺序）",
+          "evidence": "官网明确描述 IDX 70 无刷电机、EPOS4 位置控制器与 GB65 减速箱组合，用于机器人、自动化和物流，并说明位置与速度控制。"
+        },
+        "recommendedCompanyProduct": "IDX 70 无刷电机与 EPOS4 位置控制器",
+        "alternativeVerifiedSource": {
+          "publisher": "maxon",
+          "title": "BLDC motors — 无刷直流电机产品",
+          "url": "https://www.maxongroup.com/en/drives-and-systems/brushless-dc-motors",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "evidence": "ECX FLAT 一节明确写用于机器人等紧凑空间应用，并列出可配置编码器、减速箱和控制器。"
+        },
+        "limitations": "不将所有 BLDC 电机直接等同于完整伺服系统；伺服效果需要驱动器、反馈与控制。"
+      },
+      {
+        "id": "keyence",
+        "original": {
+          "url": "https://www.keyence.com/products/vision/vision-sys/",
+          "status": "可访问",
+          "verification": "verified"
+        },
+        "action": "prefer_specific_product",
+        "recommendedSource": {
+          "publisher": "KEYENCE",
+          "title": "CV-X series — 机器视觉系统",
+          "url": "https://www.keyence.com/products/vision/vision-sys/cv-x100/",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "evidence": "CV-X 官方产品页描述高速相机与照明系统，应用包含缺陷检测、装配验证、视觉引导机器人、测量和读码。"
+        },
+        "recommendedCompanyProduct": "CV-X 系列机器视觉系统",
+        "limitations": "这是视觉证据，不能用于力/力矩传感器陈述。"
+      },
+      {
+        "id": "intel",
+        "original": {
+          "url": "https://www.intelrealsense.com/depth-camera-d455/",
+          "status": "无法通过本次 web 工具访问",
+          "verification": "pending",
+          "reason": "web.open 返回 Internal Error。"
+        },
+        "action": "replace_and_rename",
+        "recommendedSource": {
+          "publisher": "RealSense",
+          "title": "D450 系列（含 D455 深度相机）",
+          "url": "https://www.realsenseai.com/product-family/450-series/",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "evidence": "官网列明 D455，包含双目深度、全局快门 RGB 和 IMU，并解释移动机器人及空间感知应用。",
+          "note": "RealSense 已于 2025-07-11 从 Intel 分拆独立；旧商标不代表当前公司归属。"
+        },
+        "recommendedCompanyName": "RealSense",
+        "recommendedCompanyProduct": "D455 双目深度相机",
+        "ownershipSourceId": "realsenseIndependence",
+        "limitations": "Intel RealSense 可用于历史商标或旧手册名，不宜作为当前公司归属；不要引用官网自称份额。"
+      },
+      {
+        "id": "hesai",
+        "original": {
+          "url": "https://www.hesaitech.com/cn/product/",
+          "status": "可访问",
+          "verification": "verified"
+        },
+        "action": "keep_and_name_product",
+        "recommendedSource": {
+          "publisher": "禾赛科技",
+          "title": "激光雷达产品 — JT32/16 与 JT128/64P",
+          "url": "https://www.hesaitech.com/cn/product/",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "evidence": "官方目录将 JT32/16 和 JT128/64P 明确标为 3D 激光雷达，并列探测距离、视场角和点频。"
+        },
+        "recommendedCompanyProduct": "JT32/16、JT128/64P 3D 激光雷达",
+        "limitations": "从目录点击独立详情链接时本次工具返回 Internal Error；目录正文可直接支持产品存在与类型。未据此主张给任何具体机器人厂商供货。"
+      },
+      {
+        "id": "robotiq",
+        "original": {
+          "url": "https://robotiq.com/products/2f85-140-adaptive-robot-gripper",
+          "status": "可访问且重定向",
+          "verification": "verified",
+          "redirectedTo": "https://robotiq.com/products/adaptive-grippers"
+        },
+        "action": "replace_with_official_manual",
+        "recommendedSource": {
+          "publisher": "Robotiq",
+          "title": "2F-85 / 2F-140 官方说明书 — 产品概述",
+          "url": "https://assets.robotiq.com/website-assets/support_documents/document/online/2F-85_2F-140_TM_InstructionManual_HTML5_20190206.zip/2F-85_2F-140_TM_InstructionManual_HTML5/Content/1.%20General_Presentation.htm",
+          "accessed": "2026-09-22",
+          "verification": "verified",
+          "evidence": "说明书明确产品为 Robotiq 两指自适应机器人夹爪，分 85 与 140 mm 开口版本，用作工业机器人末端抓取、放置和物件搬运工具；手指会适应物体形状。",
+          "note": "旧版官方手册用于确认产品与用途，不代表最新全部规格。"
+        },
+        "recommendedCompanyProduct": "2F-85 / 2F-140 自适应夹爪",
+        "limitations": "当前营销页抽取含大量模板占位内容，故以实际打开的官方产品说明书确认有限产品陈述；旧版手册不代表最新全部规格。"
+      }
+    ],
+    "additions": [
+      {
+        "id": "inovanceMotor",
+        "publisher": "汇川技术（Inovance）",
+        "title": "MS1-V6 Series — 伺服电机",
+        "url": "https://www.inovance.com/global/content/details_815_595697.html",
+        "accessed": "2026-09-22",
+        "verification": "verified",
+        "evidence": "官网将 MS1-V6 标为 High-Performance Servo Motor，说明可按需求配编码器，用于位置、速度与力矩精确控制。",
+        "recommendedCompanyProduct": "MS1-V6 系列伺服电机"
+      },
+      {
+        "id": "ati",
+        "publisher": "ATI Industrial Automation",
+        "title": "Mini45 六轴力/力矩传感器",
+        "url": "https://www.ati-ia.com/products/ft/ft_models.aspx?id=Mini45",
+        "accessed": "2026-09-22",
+        "verification": "verified",
+        "evidence": "官方 Mini45 产品页列出 Fx、Fy、Fz 与 Tx、Ty、Tz 量程、分辨率和六轴测量限制，并明确硅应变片、机器人手及手指力研究应用。",
+        "recommendedCompanyName": "ATI Industrial Automation",
+        "recommendedCompanyProduct": "Mini45 六轴力/力矩传感器",
+        "recommendedCompanyRegion": "海外"
+      },
+      {
+        "id": "realsenseIndependence",
+        "publisher": "RealSense",
+        "title": "RealSense 从 Intel 分拆独立的官方公告",
+        "url": "https://www.realsenseai.com/news-insights/news/realsense-completes-spin-out-from-intel-raises-50-million-to-accelerate-ai-powered-vision-for-robotics-and-biometrics/",
+        "published": "2025-07-11",
+        "accessed": "2026-09-22",
+        "verification": "verified",
+        "evidence": "官方公告说明 RealSense 已完成从 Intel 分拆，以独立公司运营。只据此修正归属，不采用同页份额或市场预测。"
+      }
+    ],
+    "optionalTechnicalSource": {
+      "id": "atiPrinciple",
+      "publisher": "ATI Industrial Automation",
+      "title": "F/T Product Description and Features",
+      "url": "https://www.ati-ia.com/products/ft/ft_productDesc.aspx",
+      "accessed": "2026-09-22",
+      "verification": "verified",
+      "evidence": "官网解释力/力矩系统测量六个分量，并使用硅应变片感知力。"
+    }
+  },
+  "systems": {
+    "checkedAt": "2026-09-22",
+    "method": "实际通过 web 工具打开原 URL 及下列一手替代页；搜索结果仅用于定位，结论以已打开正文为准。verified 仅表示已核对列出的具体说法，不表示独立测评厂商性能或确认供货关系。",
+    "originalSourceCount": 7,
+    "originalUrlsUsable": 4,
+    "originalUrlsNeedingReplacement": 3,
+    "sourceAudits": [
+      {
+        "id": "nvidia",
+        "originalUrl": "https://developer.nvidia.com/isaac",
+        "originalUrlResult": "可用",
+        "verification": "verified",
+        "publisher": "NVIDIA",
+        "title": "NVIDIA Isaac — AI Robot Development Platform",
+        "url": "https://developer.nvidia.com/isaac",
+        "accessed": "2026-09-22",
+        "published": null,
+        "evidence": "已打开正文包含 FoundationPose 6D 姿态估计与追踪、cuMotion 运动规划、Isaac ROS 基于 ROS 2 的 CUDA 加速软件包，以及 Isaac Sim 仿真。原有感知/仿真和 Isaac ROS 软件包说法有直接依据。",
+        "supportedClaims": [
+          "NVIDIA 提供 Isaac 机器人开发平台，包含感知、运动规划与仿真工具",
+          "Isaac ROS 提供基于 ROS 2 的 CUDA 加速软件包"
+        ],
+        "recommendedProducts": {
+          "perception": "Isaac FoundationPose 姿态估计与 Isaac Sim 仿真工具",
+          "planning": "Isaac ROS 加速软件包与 cuMotion 运动规划"
+        },
+        "caution": "不要把整个平台当作可直接执行全部机器人任务的单一产品，不引用营销效果数字。"
+      },
+      {
+        "id": "ros",
+        "originalUrl": "https://docs.ros.org/en/rolling/",
+        "originalUrlResult": "无法核实：访问防护返回 Access Denied，不是内容不存在",
+        "verification": "verified",
+        "publisher": "ROS 2 项目 / Open Source Robotics Foundation 与开源社区",
+        "title": "ROS 2 官方项目介绍",
+        "url": "https://github.com/ros2/ros2",
+        "accessed": "2026-09-22",
+        "published": null,
+        "evidence": "ROS 2 官方仓库 README 明确描述机器人应用所用的开源软件库和工具，以及 OSRF 与开源贡献者支持。原 docs.ros.org 页面没有读到正文，不应把原链接本身标为已核实。",
+        "supportedClaims": [
+          "ROS 2 是用于开发机器人应用的开源软件库与工具集合"
+        ],
+        "recommendedCompany": "ROS 2 开源社区（OSRF 支持）",
+        "recommendedProduct": "ROS 2 通信与开发框架",
+        "caution": "必须为 Navigation2 与 MoveIt 分别增加自己的官方资料，不能用 ROS 2 文档首页为这两项的功能或维护归属背书。ROS 2 本身不是 SLAM 或运动规划算法。"
+      },
+      {
+        "id": "abb",
+        "originalUrl": "https://new.abb.com/products/robotics/robots/articulated-robots/irb-6700",
+        "originalUrlResult": "需更换：重定向到机器人产品总页，读到的正文不含 IRB 6700 型号",
+        "verification": "verified",
+        "publisher": "ABB",
+        "title": "ABB at FABTECH 2019 — IRB 6700 Spot Welding Function Pack",
+        "url": "https://campaign.abb.com/fabtech2019",
+        "accessed": "2026-09-22",
+        "published": "2019（页面活动年份；未显示准确发布日期）",
+        "evidence": "已打开 ABB 2019 年活动原页，明确列出 IRB 6700 与 GWT X9 焊枪的点焊功能包，以及配备机器人、工件变位器和焊接设备的 FlexArc 焊接单元。",
+        "supportedClaims": [
+          "ABB 的 IRB 6700 工业机器人曾用于其点焊功能包",
+          "ABB 提供机器人焊接单元"
+        ],
+        "recommendedProducts": {
+          "arm": "IRB 6700 工业机器人（2019 年官方点焊案例）",
+          "manufacturing": "IRB 6700 点焊功能包与 FlexArc 焊接单元"
+        },
+        "caution": "可保留原型号，但需要显式标明为历史案例，不能据旧活动页推断当前在售状态或最新性能。检索到的 IRB 6700 官方 PDF 打开失败，未以摘要冒充全文核实。",
+        "alternative": {
+          "publisher": "ABB",
+          "title": "IRB 6730 industrial robot",
+          "url": "https://www.abb.com/global/en/areas/robotics/products/robots/articulated-robots/large-robots/irb-6730",
+          "accessed": "2026-09-22",
+          "published": null,
+          "verification": "verified",
+          "evidence": "已打开当前具体型号产品页，含 IRB 6730 变型表，并明确列出物料搬运、高精度装配、点焊和激光焊接等用途。",
+          "recommendedProduct": "IRB 6730 工业机器人（搬运、装配与焊接应用）",
+          "recommendation": "若希望首版企业案例保持当前产品页形式，可将 IRB 6700 案例改为 IRB 6730，同时更新产品名称；不要只换 URL 而保留旧型号。"
+        }
+      },
+      {
+        "id": "geek",
+        "originalUrl": "https://www.geekplus.com/zh-cn/goods-to-person",
+        "originalUrlResult": "无法访问：web 返回 URL 不可访问；不能据此断言站点不存在",
+        "verification": "verified",
+        "publisher": "极智嘉 / Geekplus",
+        "title": "Shelf-to-Person — P 系列货架到人方案",
+        "url": "https://www.geekplus.com/solutions/shelf-to-person",
+        "accessed": "2026-09-22",
+        "published": null,
+        "evidence": "已打开货架到人页，正文列出 P500、P800、P1200 及工作站、货架和拣选方式。该页直接证明货架到人系统，不足以单独证明每款产品均以 SLAM 方式自主导航。",
+        "supportedClaims": [
+          "极智嘉提供 P 系列货架到人仓储方案"
+        ],
+        "recommendedProducts": {
+          "warehouse": "P 系列货架到人拣选方案"
+        },
+        "caution": "AMR 节点不能仅用泛称货到人系统来支持具体自主导航能力。货到人是业务流程，不等于一种导航方式。",
+        "amrReplacement": {
+          "publisher": "极智嘉 / Geekplus",
+          "title": "Intralogistics — M 系列搬运机器人",
+          "url": "https://www.geekplus.com/solutions/intralogistics",
+          "accessed": "2026-09-22",
+          "published": null,
+          "verification": "verified",
+          "evidence": "已打开正文 M Series Material Handling Robots 章节；列出 MP1000、M200C，说明支持 laser SLAM、QR code navigation 等导航方式。不能据此写成所有 M 系列配置都只用 SLAM。",
+          "recommendedProduct": "M 系列搬运机器人（支持激光 SLAM、二维码等导航方式，按配置选择）",
+          "note": "导航方式按配置选择，不代表所有货到人机器人都采用 SLAM。"
+        },
+        "amrClassificationSource": {
+          "publisher": "极智嘉 / Geekplus",
+          "title": "Geek+ implements first moving solutions project in Italy with Life365",
+          "url": "https://www.geekplus.com/resources/news/geekplus-implements-first-moving-solutions-project-in-italy-with-life365",
+          "accessed": "2026-09-22",
+          "published": "2022-04-27",
+          "verification": "verified",
+          "evidence": "已打开官方案例正文，明确提到 M200C 搬运机器人，并直接用 AMR/AMRs 称呼该 M 系列方案。因此 AMR 分类有具体产品依据，无须从企业所属行业推断。",
+          "recommendedProduct": "M200C / M 系列 AMR 搬运方案（官方历史案例）"
+        }
+      },
+      {
+        "id": "unitree",
+        "originalUrl": "https://www.unitree.com/g1",
+        "originalUrlResult": "可用：规范化到末尾带斜杠的 URL",
+        "verification": "verified",
+        "publisher": "宇树科技 / Unitree Robotics",
+        "title": "Unitree G1 人形机器人",
+        "url": "https://www.unitree.com/g1/",
+        "accessed": "2026-09-22",
+        "published": null,
+        "evidence": "已打开 G1 产品页及参数表，页面明确为人形机器人，分 G1/G1 EDU 配置，列出腿/手臂自由度、深度相机与 3D 激光雷达。页尾说明部分演示功能仍在开发测试。",
+        "supportedClaims": [
+          "宇树提供 G1 人形机器人",
+          "G1 按型号与配置提供不同自由度及能力，不能将演示能力一概视为已交付"
+        ],
+        "recommendedProduct": "Unitree G1 / G1 EDU 人形机器人",
+        "caution": "维持科研教育与待验证应用边界；不要把网页演示等同于规模商业落地。无需添加价格、参数或商业进展。",
+        "note": "型号和配置不同；演示能力不等于已交付或规模商用。"
+      },
+      {
+        "id": "kuka",
+        "originalUrl": "https://www.kuka.com/en-de/industries/solutions-database",
+        "originalUrlResult": "可用，但为案例总目录，缺少具体系统产品说明",
+        "verification": "verified",
+        "publisher": "KUKA",
+        "title": "Production systems from KUKA",
+        "url": "https://www.kuka.com/en-de/products/production-systems",
+        "accessed": "2026-09-22",
+        "published": null,
+        "evidence": "已打开生产系统页，正文直接说明从单个生产单元到完整生产系统的系统集成，并列出汽车系统工程、设计与自动化、标准自动化产品。",
+        "supportedClaims": [
+          "KUKA 提供生产单元及完整生产系统的系统集成"
+        ],
+        "recommendedProducts": {
+          "integration": "生产单元与整线系统集成"
+        },
+        "manufacturingSource": {
+          "publisher": "KUKA",
+          "title": "Systems engineering for the automotive industry",
+          "url": "https://www.kuka.com/en-de/products/production-systems/automotive-systems-engineering",
+          "accessed": "2026-09-22",
+          "published": null,
+          "verification": "verified",
+          "evidence": "已打开汽车系统工程页，明确包含连接、成形、装配和自动化生产技术；页面链接白车身生产系统。",
+          "recommendedProduct": "汽车装配与生产系统工程"
+        }
+      },
+      {
+        "id": "amazon",
+        "originalUrl": "https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center",
+        "originalUrlResult": "可用",
+        "verification": "verified",
+        "publisher": "Amazon",
+        "title": "Amazon uses robots that sort, lift, and carry packages — see them in action",
+        "url": "https://www.aboutamazon.com/news/operations/amazon-robotics-robots-fulfillment-center",
+        "accessed": "2026-09-22",
+        "published": null,
+        "evidence": "已打开原文。Hercules 将货架单元送到拣选员工；Sparrow 机械臂抓取并搬运单件商品；Proteus 使用传感器检测避让障碍并移动料车。正文区分 Hercules/Titan 读取地面标记、受限区域运行与 Proteus 自主移动。",
+        "supportedClaims": [
+          "Amazon Robotics 在履约中心使用移动机器人与机械臂协同搬运和拣选",
+          "Hercules 与 Sparrow 是具体仓储产品案例"
+        ],
+        "recommendedProduct": "Hercules 货架搬运机器人与 Sparrow 拣选机械臂",
+        "caution": "原文是会更新的文章，本次未读到稳定发布日期，仅记录访问日期。不要把所有仓储机器人等同于使用 SLAM 的 AMR；不要引入未来部署计划或性能数字。"
+      }
+    ],
+    "additions": [
+      {
+        "id": "nav2",
+        "publisher": "Open Navigation / Nav2 开源社区",
+        "title": "Nav2 — 自主导航框架",
+        "url": "https://docs.nav2.org/rolling/",
+        "accessed": "2026-09-22",
+        "published": null,
+        "verification": "verified",
+        "evidence": "官方文档将 Nav2 定义为移动机器人自主导航框架；关于页列出 Open Navigation 的 Steve Macenski 为项目负责人；为社区项目，不能归为 Open Robotics 自有产品。",
+        "attributionUrl": "https://docs.nav2.org/rolling/about_and_contact/",
+        "recommendedCompany": "Open Navigation 与 Nav2 社区",
+        "recommendedProduct": "Navigation2（Nav2）自主导航框架"
+      },
+      {
+        "id": "slamTutorial",
+        "publisher": "Open Navigation / Nav2 开源社区",
+        "title": "Navigating while Mapping (SLAM)",
+        "url": "https://docs.nav2.org/rolling/tutorials/general_tutorials/navigation2_with_slam/navigation2_with_slam/",
+        "accessed": "2026-09-22",
+        "published": null,
+        "verification": "verified",
+        "evidence": "官方教程分别安装并启动 Nav2 与 SLAM Toolbox，SLAM 节点提供地图与 map→odom 变换，再由 Nav2 执行导航。直接证明 SLAM 与导航是协作模块而非同一算法。",
+        "supportedClaims": [
+          "SLAM 负责同时建图与定位，导航负责到达目标的路径和移动控制，可结合使用"
+        ]
+      },
+      {
+        "id": "rosNavConcepts",
+        "publisher": "Open Navigation / Nav2 开源社区",
+        "title": "ROS 2 — Nav2 Navigation Concepts",
+        "url": "https://docs.nav2.org/rolling/getting_started/navigation_concepts/ros2/",
+        "accessed": "2026-09-22",
+        "published": null,
+        "verification": "verified",
+        "evidence": "Nav2 官方明确说 ROS 2 是其核心中间件，并说明通过 action 消息在行为树导航器、规划与控制服务间通信。",
+        "supportedClaims": [
+          "ROS 2 为 Nav2 提供中间件与模块通信"
+        ]
+      },
+      {
+        "id": "moveit",
+        "publisher": "MoveIt 社区 / PickNik Robotics",
+        "title": "MoveIt Motion Planning Framework",
+        "url": "https://moveit.ai/",
+        "accessed": "2026-09-22",
+        "published": null,
+        "verification": "verified",
+        "evidence": "已打开主页，列出运动规划、操作、运动学、碰撞检测及轨迹接口。About 页说明由公开维护者会议治理，PickNik 负责组织领导及额外维护；Open Robotics 在历史说明中为顾问及 ROS/发布基础设施支持。",
+        "attributionUrl": "https://moveit.ai/about/",
+        "recommendedCompany": "MoveIt 社区（PickNik 参与维护）",
+        "recommendedProduct": "MoveIt 2 运动规划与操作框架"
+      }
+    ],
+    "recommendedCopy": {
+      "slam": {
+        "subtitle": "定位与建图，再规划怎么走",
+        "simple": "SLAM 一边建立地图，一边估计机器人在地图中的位置；导航再根据位置、目标和障碍物安排怎么走。",
+        "role": "SLAM 可以融合相机、激光雷达和里程计等信息生成地图与位姿。导航框架利用定位结果规划路径并控制移动，也可以在已有地图上导航，并非每次都要重新建图。",
+        "companies": [
+          "Open Navigation 与 Nav2 社区 — Nav2 自主导航框架"
+        ],
+        "sources": [
+          "nav2",
+          "slamTutorial"
+        ]
+      },
+      "planning": {
+        "companies": [
+          "ROS 2 开源社区（OSRF 支持）— ROS 2 通信与开发框架",
+          "MoveIt 社区（PickNik 参与维护）— MoveIt 2 运动规划与操作框架",
+          "NVIDIA — Isaac ROS 软件包"
+        ],
+        "sources": [
+          "ros",
+          "rosNavConcepts",
+          "moveit",
+          "nvidia"
+        ]
+      },
+      "learningPathStep3": "先由定位或 SLAM 模块判断位置；导航软件再规划路线、避让障碍。已有地图时可直接定位，不必每次边走边建图。",
+      "amr": "企业案例具体到极智嘉 M 系列，并列产品页与 M200C 官方案例两条来源。注明导航方式按配置选择；不要将货到人这一流程本身作为 AMR 证据。",
+      "warehouse": "极智嘉 P 系列货架到人；Amazon Hercules 搬运与 Sparrow 拣选。流程里包含不同导航方式与不同类型机器人。"
+    },
+    "materialIssues": [
+      {
+        "id": "S1",
+        "severity": "需修复",
+        "description": "ROS 2 首页被当作 Nav2/MoveIt 的共同来源，且开源项目维护归属不准确。拆成独立资料及案例。"
+      },
+      {
+        "id": "S2",
+        "severity": "需修复",
+        "description": "SLAM 描述与路径规划混淆，学习路径还暗示导航总在同时建图。分别解释并补官方教程。"
+      },
+      {
+        "id": "S3",
+        "severity": "需修复",
+        "description": "极智嘉泛称货到人方案不足以支持 AMR 具体能力；按 M 系列与 P 系列区分实例。"
+      },
+      {
+        "id": "S4",
+        "severity": "需修复",
+        "description": "ABB 原型号页重定向，不能标成已核实；需换历史原始案例并标年份，或明确改用已核实 IRB 6730 产品。"
+      },
+      {
+        "id": "S5",
+        "severity": "需改进",
+        "description": "KUKA 原引用仅为案例总目录，改为生产系统/汽车系统工程页能更直接支持集成及装配说法。"
+      }
+    ]
+  }
+}
